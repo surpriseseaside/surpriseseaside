@@ -631,41 +631,6 @@ nav {
     text-shadow: 0 0 10px var(--primary);
 }
 
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-.mobile-menu span {
-    width: 30px;
-    height: 3px;
-    background: var(--primary);
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--primary);
-}
-
-.mobile-menu:hover span {
-    box-shadow: 0 0 15px var(--primary), 0 0 25px var(--primary);
-}
-
-.mobile-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
-}
-
-.mobile-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
-}
-
         /* ==================== HERO ==================== */
         .hero {
             min-height: 100vh;
@@ -1803,12 +1768,6 @@ body.theme-sombra .counter-icon {
 body.theme-sombra footer {
     background: #0a0014;
     border-top-color: #9d4edd;
-}
-
-/* Mobile menu no tema Sombra */
-body.theme-sombra .mobile-menu span {
-    background: #9d4edd;
-    box-shadow: 0 0 10px #9d4edd;
 }
 
 /* Notificações no tema Sombra */
@@ -3128,10 +3087,6 @@ body.newyear-mode {
                 right: 0;
             }
 
-            .mobile-menu {
-                display: flex;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -3266,11 +3221,6 @@ body.newyear-mode {
                 <li><a href="#social">Redes</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <div class="mobile-menu" id="mobileMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
@@ -4192,21 +4142,6 @@ body.newyear-mode {
         setTimeout(() => {
             document.getElementById('loading').classList.add('hidden');
         }, 1500);
-    });
-
-    // ==================== MOBILE MENU ====================
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        });
     });
 
     // ==================== HEADER SCROLL ====================
@@ -6222,5 +6157,6 @@ showNotification(
 </body>
 
 </html>
+
 
 
